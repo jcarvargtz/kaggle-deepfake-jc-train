@@ -74,7 +74,7 @@ if __name__ == '__main__':
     start = int(time.time())
     with multiprocessing.Pool() as pool: # use all cores available
         pool.map(dppvm.extract_zip, zipfiles)
-    logging.info(f"Extracted all zip files in {int(time.time()) - start} seconds!")
+    # logging.info(f"Extracted all zip files in {int(time.time()) - start} seconds!")
     path_video_files = dppvm.DEST/'videos'
     path_meta = dppvm.DEST/'metadata'/'all_meta.json'
     all_meta = pd.read_json(path_meta).T
