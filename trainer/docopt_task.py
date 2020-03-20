@@ -21,13 +21,13 @@ Options:
 """
 from docopt import docopt
 
-import Model  # Your model.py file.
-import download_and_pre_process_for_virtual_machine as dppvm
-import pre_process_funcs as ppf
+import trainer.Model  # Your model.py file.
+import trainer.download_and_pre_process_for_virtual_machine as dppvm
+import trainer.pre_process_funcs as ppf
 from pathlib import Path
 import subprocess
 import pandas as pd
-from blazeface_pytorch.blazeface import BlazeFace
+from trainer.blazeface_pytorch.blazeface import BlazeFace
 import logging
 from keras.models import Model, Sequential
 from keras.layers import Dense, Conv2D, LSTM, Dropout, AveragePooling2D

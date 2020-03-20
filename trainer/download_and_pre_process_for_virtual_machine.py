@@ -9,7 +9,7 @@ from typing import Union
 import pandas as pd
 import numpy as np
 import subprocess
-from pre_process_funcs import *
+from trainer.pre_process_funcs import *
 
 # Place where the download will happen
 zip_down_dir = "/home/User/zips/dfdc_train_all.zip"

@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 import tensorflow as tf
 import sys
-from blazeface_pytorch.blazeface import BlazeFace
+from trainer.blazeface_pytorch.blazeface import BlazeFace
 from keras.utils import Sequence
 
 # Setting tf for my gpu
@@ -31,8 +31,8 @@ gpu = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 gpu
 
 facedet = BlazeFace().to(gpu)
-facedet.load_weights( r'blazeface_pytorch\blazeface.pth')
-facedet.load_anchors( r'blazeface_pytorch\anchors.npy')
+facedet.load_weights( r'trainer\blazeface_pytorch\blazeface.pth')
+facedet.load_anchors( r'trainer\blazeface_pytorch\anchors.npy')
 _ = facedet.train(False)
 
 

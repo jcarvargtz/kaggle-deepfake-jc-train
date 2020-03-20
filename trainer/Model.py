@@ -10,7 +10,7 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping, History
 from keras.losses import BinaryCrossentropy
 from keras.metrics import Accuracy
 from keras.optimizers import Adam
-import pre_process_funcs as funcs
+import trainer.pre_process_funcs as funcs
 import tensorflow as tf
 from keras.applications import ResNet152V2, ResNet50
 # Setting tf for my gpu
