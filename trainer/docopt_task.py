@@ -1,13 +1,9 @@
 """
-Usage: trainer.task --download=<download> --n_frames=<n_frames> --d1=<d1> --d2=<d2> --channels=<channels>
+Usage: trainer.task 
 
 Options:
     -h --help     Show this screen.
-    --download=<download>    True or False [default: True]
-    --n_frames=<n_frames>    Number of frames to consider [default: 30]
-    --d1=<d1>                Height [default: 244]
-    --d2=<d2>                Width [default: 244]
-    --channels=<channels>    N chanels [default: 3]
+
 """
 from docopt import docopt
 
@@ -36,7 +32,6 @@ from keras.applications import ResNet152V2, ResNet50
 print("0.0")
 if __name__ == '__main__':
     print("0.1")
-    print(docopt(__doc__))
     try:
         arguments = docopt(__doc__)
     except:
@@ -47,13 +42,12 @@ if __name__ == '__main__':
         tf.config.experimental.set_memory_growth(device, True)
     # Assign model variables to commandline arguments
     print("2")
-    if arguments['<download>'] == True:
-        subprocess.call([dppvm.curl, dppvm.zip_down_dir],shell=True)
+    subprocess.call([dppvm.curl, dppvm.zip_down_dir],shell=True)
     print("3")
-    dppvm.DEST = Path(arguments['<dest_dir>'])
-    dims = (int(arguments['<d1>']),int(arguments['<d12>']))
-    channels = int(arguments['<channels>'])
-    n_frames = int(arguments['<n_frames>'])
+    dppvm.DEST = Path("destination_directory")
+    dims = (244,244)
+    channels = 3
+    n_frames = 30
     ppf.frames_per_video = n_frames
     print("4")
     saved_model_path = "weights-improvement-{epoch:02d}-{val_accuracy:.2f}.hdf5"
