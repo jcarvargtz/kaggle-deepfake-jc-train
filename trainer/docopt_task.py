@@ -32,7 +32,10 @@ from keras.optimizers import Adam
 import tensorflow as tf
 from keras.applications import ResNet152V2, ResNet50
 
+
+print("0.0")
 if __name__ == '__main__':
+    print("0.1")
     arguments = docopt(__doc__)
     print("1")
     gpu_devices = tf.config.experimental.list_physical_devices('GPU')
