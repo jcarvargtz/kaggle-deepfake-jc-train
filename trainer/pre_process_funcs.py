@@ -11,6 +11,7 @@ import tensorflow as tf
 import sys
 from trainer.blazeface import BlazeFace
 from keras.utils import Sequence
+import pkg_resources
 
 # Setting tf for my gpu
 gpu_devices = tf.config.experimental.list_physical_devices('GPU')
@@ -30,9 +31,12 @@ print("cuDNN version:", torch.backends.cudnn.version())
 gpu = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 gpu
 
+pth_path = pkg_resources.resource_filename(__name__,'trainer/blazeface.pth')
+npy_path = pkg_resources.resource_filename(__name__,'trainer/anchors.npy')
+
 facedet = BlazeFace().to(gpu)
-facedet.load_weights( r'trainer/blazeface.pth')
-facedet.load_anchors( r'trainer/anchors.npy')
+facedet.load_weights(pth_path)
+facedet.load_anchors( npy_path)
 _ = facedet.train(False)
 
 

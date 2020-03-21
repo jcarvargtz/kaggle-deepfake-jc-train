@@ -10,11 +10,15 @@ import pandas as pd
 import numpy as np
 import subprocess
 from trainer.pre_process_funcs import *
+import pkg_resources
+
+curl =pkg_resources.resource_filename(__name__,'trainer/curl_get.sh')
+
 
 # Place where the download will happen
-zip_down_dir = "/home/User/zips/dfdc_train_all.zip"
+zip_down_dir = Path()
 # Download the data
-subprocess.call(['curl_get.sh', zip_down_dir])
+subprocess.call([curl, zip_down_dir])
 
 def get_zipfiles(directory):
     list_files = []
