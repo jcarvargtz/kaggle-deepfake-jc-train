@@ -61,7 +61,10 @@ if __name__ == '__main__':
     acc = Accuracy()
 
     # # # Run the training job
-    zipfiles = dppvm.extract_zips(dppvm.zip_down_dir)
+    try:
+        zipfiles = dppvm.extract_zips(dppvm.zip_down_dir)
+    except:
+        print("no se descargo ni madres")
     DATA = Path()
     DEST = dppvm.DEST
     logging.basicConfig(filename='extract.log', level=logging.INFO)
