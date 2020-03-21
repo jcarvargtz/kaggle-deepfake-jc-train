@@ -1,7 +1,6 @@
-"""Run a training job on Cloud ML Engine for a given use case.
+"""
 Usage:
-    trainer.task --download <download> --n_frames <n_frames> --d1 <d1> --d2 <d2> --channels <channels>
-                [--download_dir <download_dir>] [--dest_dir <dest_dir>] [--output_dir <outdir>] [--batch_size <batch_size>] [--hidden_units <hidden_units>]
+    trainer.task --download=<download> --n_frames=<n_frames> --d1=<d1> --d2=<d2> --channels=<channels>
 
 Options:
     -h --help     Show this screen.
@@ -10,11 +9,6 @@ Options:
     --d1 <d1>                Height [default: 244]
     --d2 <d2>                Width [default: 244]
     --channels <channels>    N chanels [default: 3]
-    --download_dir <download_dir> 
-    --dest_dir <dest_dir> 
-    --output_dir <outdir>
-    --batch_size <batch_size> 
-    --hidden_units <hidden_units>
 """
 from docopt import docopt
 
