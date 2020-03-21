@@ -12,7 +12,7 @@ import subprocess
 from trainer.pre_process_funcs import *
 import pkg_resources
 
-curl =pkg_resources.resource_filename(__name__,'trainer/curl_get.sh')
+curl =pkg_resources.resource_filename(__name__,'curl_get.sh')
 
 
 # Place where the download will happen
