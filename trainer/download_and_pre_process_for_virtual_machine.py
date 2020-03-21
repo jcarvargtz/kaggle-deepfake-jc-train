@@ -18,7 +18,7 @@ curl =pkg_resources.resource_filename(__name__,'curl_get.sh')
 # Place where the download will happen
 zip_down_dir = Path()
 # Download the data
-subprocess.call([curl, zip_down_dir],shell=True)
+# subprocess.call([curl, zip_down_dir],shell=True)
 
 def get_zipfiles(directory):
     list_files = []

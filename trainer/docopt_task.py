@@ -46,7 +46,7 @@ if __name__ == '__main__':
     # Assign model variables to commandline arguments
     dppvm.zip_down_dir = arguments['<download_dir>']
     if arguments['<download>'] == True:
-        subprocess.call(['curl_get.sh', dppvm.zip_down_dir])
+        subprocess.call([dppvm.curl, dppvm.zip_down_dir],shell=True)
     dppvm.DEST = Path(arguments['<dest_dir>'])
     dims = (int(arguments['<d1>']),int(arguments['<d12>']))
     channels = int(arguments['<channels>'])
