@@ -36,6 +36,7 @@ from keras.applications import ResNet152V2, ResNet50
 print("0.0")
 if __name__ == '__main__':
     print("0.1")
+    print(docopt(__doc__))
     try:
         arguments = docopt(__doc__)
     except:
