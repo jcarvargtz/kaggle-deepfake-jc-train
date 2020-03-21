@@ -40,7 +40,6 @@ if __name__ == '__main__':
         tf.config.experimental.set_memory_growth(device, True)
     # Assign model variables to commandline arguments
     print("2")
-    dppvm.zip_down_dir = arguments['<download_dir>']
     if arguments['<download>'] == True:
         subprocess.call([dppvm.curl, dppvm.zip_down_dir],shell=True)
     print("3")
