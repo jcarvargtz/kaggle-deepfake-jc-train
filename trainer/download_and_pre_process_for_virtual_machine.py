@@ -139,7 +139,10 @@ def pre_process_video(video_file_path,output_dir,n_frames,dims,channels):
         for i in range(len(X[x])):
             out.write(X[x][i])
 
-os.mkdir(DEST/"captures")
+try:
+    os.mkdir(DEST/"captures")
+except:
+    pass
 failed = []
 for video in os.listdir(DEST /"videos"):
     try:
