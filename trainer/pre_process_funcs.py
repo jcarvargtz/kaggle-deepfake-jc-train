@@ -31,8 +31,8 @@ gpu = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 gpu
 
 facedet = BlazeFace().to(gpu)
-facedet.load_weights( r'trainer/blazeface.pth')
-facedet.load_anchors( r'trainer/anchors.npy')
+facedet.load_weights( r'./blazeface.pth')
+facedet.load_anchors( r'./anchors.npy')
 _ = facedet.train(False)
 
 
