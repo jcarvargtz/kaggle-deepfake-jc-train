@@ -7,16 +7,16 @@ Usage:
                 [--batch_size <batch_size>] [--hidden_units <hidden_units>]
 Options:
     -h --help     Show this screen.
-    --download=BOOL     <download> True or False
-    --n_frames=NUM      <n_frames> number of frames to consider
-    --d1=NUM            <d1> [default: 244]
-    --d2=NUM            <d2> [default: 244]
-    --channels=NUM      <channels> [default: 3]
-    --download_dir=PTH  <download_dir> 
-    --dest_dir=PTH      <dest_dir> 
-    --output_dir=PTH    <outdir>
-    --batch_size=NUM    <batch_size> 
-    --hidden_units=NUM  <hidden_units>
+    --download <download>    True or False [default: True]
+    --n_frames <n_frames>    Number of frames to consider [default: 30]
+    --d1 <d1>                Height [default: 244]
+    --d2 <d2>                Width [default: 244]
+    --channels <channels>    N chanels [default: 3]
+    --download_dir <download_dir> 
+    --dest_dir <dest_dir> 
+    --output_dir <outdir>
+    --batch_size <batch_size> 
+    --hidden_units <hidden_units>
 """
 from docopt import docopt
 
