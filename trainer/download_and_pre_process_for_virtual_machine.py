@@ -12,7 +12,7 @@ import subprocess
 from trainer.pre_process_funcs import *
 import pkg_resources
 
-curl =pkg_resources.resource_filename(__name__,'curl_get.sh')
+curl = pkg_resources.resource_filename(__name__,'curl_get.sh')
 
 
 # Place where the download will happen
@@ -139,17 +139,17 @@ def pre_process_video(video_file_path,output_dir,n_frames,dims,channels):
         for i in range(len(X[x])):
             out.write(X[x][i])
 
-try:
-    os.mkdir(DEST/"captures")
-except:
-    pass
-failed = []
-for video in os.listdir(DEST /"videos"):
-    try:
-        pre_process_video(video_file_path=DEST /"videos"/video, output_dir=DEST / "captures", dims=(224,224), channels=3)
-        os.remove(video)
-    except:
-        failed.append(video)
+# try:
+#     os.mkdir(DEST/"captures")
+# except:
+#     pass
+# failed = []
+# for video in os.listdir(DEST /"videos"):
+#     try:
+#         pre_process_video(video_file_path=DEST /"videos"/video, output_dir=DEST / "captures", dims=(224,224), channels=3)
+#         os.remove(video)
+#     except:
+#         failed.append(video)
 
 
 

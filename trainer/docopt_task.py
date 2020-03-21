@@ -70,7 +70,18 @@ if __name__ == '__main__':
     start = int(time.time())
     with multiprocessing.Pool() as pool: # use all cores available
         pool.map(dppvm.extract_zip, zipfiles)
-    # logging.info(f"Extracted all zip files in {int(time.time()) - start} seconds!")
+    # logging.info(f"Extracted all zip files in {int(time.time()) - start} seconds!")       
+    try:
+        os.mkdir(DEST/"captures")
+    except:
+        pass
+    failed = []
+    for video in os.listdir(DEST /"videos"):
+        try:
+            dppvm.pre_process_video(video_file_path=DEST /"videos"/video, output_dir=DEST / "captures", dims=dims, channels=channels)
+            os.remove(video)
+        except:
+            failed.append(video)
     path_video_files = dppvm.DEST/'videos'
     path_meta = dppvm.DEST/'metadata'/'all_meta.json'
     all_meta = pd.read_json(path_meta).T
