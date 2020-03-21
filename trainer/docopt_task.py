@@ -63,6 +63,7 @@ if __name__ == '__main__':
     # # # Run the training job
     try:
         zipfiles = dppvm.extract_zips(dppvm.zip_down_dir)
+        print("se descargo")
     except:
         print("no se descargo ni madres")
     DATA = Path("download")
