@@ -2,6 +2,7 @@
 Usage:
     trainer.task --download <download> --n_frames <n_frames> --d1 <d1> --d2 <d2> --channels <channels>
                 [--download_dir <download_dir>] [--dest_dir <dest_dir>] [--output_dir <outdir>] [--batch_size <batch_size>] [--hidden_units <hidden_units>]
+
 Options:
     -h --help     Show this screen.
     --download <download>    True or False [default: True]
