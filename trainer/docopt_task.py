@@ -65,7 +65,7 @@ if __name__ == '__main__':
         zipfiles = dppvm.extract_zips(dppvm.zip_down_dir)
     except:
         print("no se descargo ni madres")
-    DATA = Path()
+    DATA = Path("download")
     DEST = dppvm.DEST
     logging.basicConfig(filename='extract.log', level=logging.INFO)
     zipfiles = sorted(list(DATA.glob('dfdc_train_part_*.zip')), key=lambda x: x.stem)

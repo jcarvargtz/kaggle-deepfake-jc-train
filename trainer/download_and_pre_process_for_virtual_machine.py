@@ -13,10 +13,12 @@ from trainer.pre_process_funcs import *
 import pkg_resources
 
 curl = pkg_resources.resource_filename(__name__,'curl_get.sh')
-
-
+try:
+    os.mkdir("download")
+except:
+    pass
 # Place where the download will happen
-zip_down_dir = Path()
+zip_down_dir = Path("download")
 # Download the data
 # subprocess.call([curl, zip_down_dir],shell=True)
 
