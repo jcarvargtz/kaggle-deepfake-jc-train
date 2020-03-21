@@ -1,6 +1,5 @@
 """
-Usage:
-    trainer.task --download=<download> --n_frames=<n_frames> --d1=<d1> --d2=<d2> --channels=<channels>
+Usage: trainer.task --download=<download> --n_frames=<n_frames> --d1=<d1> --d2=<d2> --channels=<channels>
 
 Options:
     -h --help     Show this screen.
