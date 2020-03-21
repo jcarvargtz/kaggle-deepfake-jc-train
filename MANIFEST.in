@@ -1,0 +1,3 @@
+include trainer/blazeface.pth
+include trainer/anchors.npy
+include trainer/curl_get.sh
