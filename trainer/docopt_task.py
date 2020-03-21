@@ -3,11 +3,11 @@ Usage: trainer.task --download=<download> --n_frames=<n_frames> --d1=<d1> --d2=<
 
 Options:
     -h --help     Show this screen.
-    --download <download>    True or False [default: True]
-    --n_frames <n_frames>    Number of frames to consider [default: 30]
-    --d1 <d1>                Height [default: 244]
-    --d2 <d2>                Width [default: 244]
-    --channels <channels>    N chanels [default: 3]
+    --download=<download>    True or False [default: True]
+    --n_frames=<n_frames>    Number of frames to consider [default: 30]
+    --d1=<d1>                Height [default: 244]
+    --d2=<d2>                Width [default: 244]
+    --channels=<channels>    N chanels [default: 3]
 """
 from docopt import docopt
 
