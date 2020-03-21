@@ -7,7 +7,7 @@ REQUIRED_PACKAGES = ['docopt', 'pandas', 'keras', 'tensorflow','opencv-python','
 
 setup(
     name='trainer',
-    version='0.91',
+    version='0.92',
     author = 'Juan Carlos Vargas',
     author_email = 'jcarvargtz@hotmail.com',
     install_requires=REQUIRED_PACKAGES,
