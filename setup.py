@@ -5,7 +5,7 @@ REQUIRED_PACKAGES = ['docopt', 'pandas', 'keras', 'tensorflow','opencv-python','
 
 setup(
     name='Deepfake-challenge',
-    version='0.3',
+    version='0.4',
     author = 'Juan Carlos Vargas',
     author_email = 'jcarvargtz@hotmail.com',
     install_requires=REQUIRED_PACKAGES,
