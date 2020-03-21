@@ -44,6 +44,7 @@ def extract_zips(directory):
 
 os.mkdir("destination_directory")
 DEST = Path('destination_directory')
+os.mkdir(DEST/'videos')
 
 def extract_zip(zipfile: Union[str, Path])->None:
     zip_no = zipfile.stem[-2:]
