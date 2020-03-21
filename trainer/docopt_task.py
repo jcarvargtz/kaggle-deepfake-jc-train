@@ -27,7 +27,7 @@ import trainer.pre_process_funcs as ppf
 from pathlib import Path
 import subprocess
 import pandas as pd
-from trainer.blazeface_pytorch.blazeface import BlazeFace
+from trainer.blazeface import BlazeFace
 import logging
 from keras.models import Model, Sequential
 from keras.layers import Dense, Conv2D, LSTM, Dropout, AveragePooling2D
