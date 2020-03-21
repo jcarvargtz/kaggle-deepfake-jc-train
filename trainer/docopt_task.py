@@ -40,18 +40,22 @@ from keras.applications import ResNet152V2, ResNet50
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
+    print("1")
     gpu_devices = tf.config.experimental.list_physical_devices('GPU')
     for device in gpu_devices:
         tf.config.experimental.set_memory_growth(device, True)
     # Assign model variables to commandline arguments
+    print("2")
     dppvm.zip_down_dir = arguments['<download_dir>']
     if arguments['<download>'] == True:
         subprocess.call([dppvm.curl, dppvm.zip_down_dir],shell=True)
+    print("3")
     dppvm.DEST = Path(arguments['<dest_dir>'])
     dims = (int(arguments['<d1>']),int(arguments['<d12>']))
     channels = int(arguments['<channels>'])
     n_frames = int(arguments['<n_frames>'])
     ppf.frames_per_video = n_frames
+    print("4")
     saved_model_path = "weights-improvement-{epoch:02d}-{val_accuracy:.2f}.hdf5"
     checkpoint = ModelCheckpoint(saved_model_path, monitor="val_accuracy",verbose=1,save_best_only=True)
     earlystop = EarlyStopping(monitor= "val_accuracy", min_delta = 0.01, patience = 5, restore_best_weights=True)
@@ -59,7 +63,7 @@ if __name__ == '__main__':
     optimizer = Adam()
     binloss = BinaryCrossentropy()
     acc = Accuracy()
-
+    print("5")
     # # # Run the training job
     try:
         zipfiles = dppvm.extract_zips(dppvm.zip_down_dir)
@@ -68,9 +72,11 @@ if __name__ == '__main__':
         print("no se descargo ni madres")
     DATA = Path("download")
     DEST = dppvm.DEST
+    print("6")
     logging.basicConfig(filename='extract.log', level=logging.INFO)
     zipfiles = sorted(list(DATA.glob('dfdc_train_part_*.zip')), key=lambda x: x.stem)
     # Extract the zip files
+    print("7")
     start = int(time.time())
     with multiprocessing.Pool() as pool: # use all cores available
         pool.map(dppvm.extract_zip, zipfiles)
