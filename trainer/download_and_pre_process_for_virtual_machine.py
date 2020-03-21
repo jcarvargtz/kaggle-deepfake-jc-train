@@ -42,6 +42,7 @@ def extract_zips(directory):
         os.remove(zipfile)
     return zipfiles
 
+os.mkdir("destination_directory")
 DEST = Path('destination_directory')
 
 def extract_zip(zipfile: Union[str, Path])->None:
