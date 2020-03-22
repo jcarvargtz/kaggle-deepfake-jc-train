@@ -75,7 +75,7 @@ if __name__ == '__main__':
     zipfiles = sorted(list(DATA.glob('dfdc_train_part_*.zip')), key=lambda x: x.stem)
     # Extract the zip files
     print("7")
-    start = int(time.time())
+    # start = int(time.time())
     with multiprocessing.Pool() as pool: # use all cores available
         pool.map(dppvm.extract_zip, zipfiles)
     # logging.info(f"Extracted all zip files in {int(time.time()) - start} seconds!")       
