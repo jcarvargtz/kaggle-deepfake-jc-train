@@ -86,6 +86,7 @@ if __name__ == '__main__':
         os.mkdir(DEST/"captures")
     except:
         pass
+    print("8")
     failed = []
     for video in os.listdir(DEST /"videos"):
         try:
@@ -93,16 +94,20 @@ if __name__ == '__main__':
             os.remove(video)
         except:
             failed.append(video)
+    print("9")
     path_video_files = dppvm.DEST/'videos'
     path_meta = dppvm.DEST/'metadata'/'all_meta.json'
     all_meta = pd.read_json(path_meta).T
     all_meta["path"] = path_video_files + r'/' + all_meta.index
     # Train the model
+    print("10")
     val_msk = int(len(all_meta) * 0.9)
     gener = ppf.DataGenerator(all_meta[:val_msk].index,video_path=all_meta[:val_msk].path,meta=all_meta[:val_msk])
     val = ppf.DataGenerator(all_meta[val_msk:].index,video_path=all_meta[val_msk:],meta=all_meta[val_msk:])
+    print("11")
     model = Model.make_model(n_frames,dims,channels)
     model.compile(optimizer= optimizer, loss = binloss, metrics = [acc])
+    print("12")
     Model.train_and_evaluate(gener,callbacks=callbacks_list,validation_data=val,use_multiprocessing=True,workers=-1,verbose=1,epochs=500)
 
     # Make_predicctions
